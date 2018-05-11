@@ -28,6 +28,8 @@
 #include <string.h>
 #include <stdio.h>
 
+#include "elf_load.h"
+
 #define ELF_LOAD(phdr, phnum, elf_start, self)   \
 do {                                             \
     int i;                                       \
@@ -72,7 +74,7 @@ elf64_load(
 
 long long
 elf_load(
-    char *elf_start,
+    void *elf_start,
     void *self,
     int *is_64bit)
 {
